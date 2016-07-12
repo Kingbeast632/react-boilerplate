@@ -13,10 +13,14 @@ var CONFIG = {
             {
                 text: "About",
                 route: "about"
+            },
+            {
+                text: "Contact",
+                route: "contact"
             }
         ]
     },
-    
+
     home: {
         header: "Hello World!",
         content: "This is Mo's World!"
@@ -25,6 +29,24 @@ var CONFIG = {
     about: {
         header: "About Me!",
         content: "I'm Awesome!!"
+    },
+
+    contact: {
+      header: "Contacts",
+      people: [
+            {
+                name: "Mohammed Siddeeq",
+                phone: "5432 Gerald Drive"
+            },
+            {
+                name: "Wafeeq Mujahid",
+                phone: "3215 Waffles Drive"
+            },
+            {
+                name: "Ismail Siddeeq",
+                phone: "2953 King Drive"
+            }
+        ]
     },
 
     data: {

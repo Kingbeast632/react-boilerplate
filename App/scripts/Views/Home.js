@@ -16,13 +16,6 @@ var Home = React.createClass({
             <div className="app-view home container">
                 <h2 className="header">{home.header}</h2>
                 <div className="content">{home.content}</div>
-                <ul className="users">
-                {
-                    data.users.map((user, index) => {
-                        return this.renderUser(user);
-                    })
-                }
-                </ul>
             </div>
         );
     }
