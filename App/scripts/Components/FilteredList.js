@@ -1,6 +1,13 @@
 import React from 'react';
 var { ListGroup, ListGroupItem, FormControl, Pagination } = require('react-bootstrap')
 var FilteredList = React.createClass({
+
+ handleSelect(eventKey) {
+   this.setState({
+     activePage: eventKey
+   });
+ },
+  // sdasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
   propTypes: {
     list: React.PropTypes.array //array of ojecet that will be listed
   },
@@ -68,34 +75,19 @@ var FilteredList = React.createClass({
                   }
                   </ListGroup>
             </div>
+
+            <Pagination
+                prev
+                next
+                first
+                last
+                ellipsis
+                boundaryLinks
+                items={20}
+                maxButtons={5}
+                activePage={this.state.activePage}
+                onSelect={this.handleSelect} />
         );
     }
-});
-var PaginationBasic = React.createClass({
-  getInitialState() {
-    return {
-      activePage: 1
-    };
-  },
-
-  handleSelect(eventKey) {
-    this.setState({
-      activePage: eventKey
-    });
-  },
-
-  render() {
-    return (
-      <div>
-        <Pagination
-          bsSize="large"
-          items={10}
-          activePage={this.state.activePage}
-          onSelect={this.handleSelect} />
-      </div>
-    );
-  }
-});
-
-ReactDOM.render(<PaginationBasic />, mountNode);
+};
 module.exports = FilteredList;
